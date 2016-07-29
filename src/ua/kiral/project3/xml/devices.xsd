@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.epam.com/devices" xmlns="http://www.epam.com/devices"
+	elementFormDefault="qualified" xmlns:st="http://www.epam.com/simpleTypes">
+
+	<!-- import shema with simple types -->
+	<xs:import namespace="http://www.epam.com/simpleTypes"
+		schemaLocation="simpleTypes.xsd" />
+
+	<!-- definition of attributes -->
+	<xs:attribute name="id" type="xs:positiveInteger" />
+	<xs:attribute name="country" type="xs:NMTOKEN" />
+
+	<!-- definition of complex elements -->
+	<xs:element name="origin">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:string">
+					<xs:attribute ref="country" use="required" />
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="price">
+		<xs:simpleType>
+			<xs:restriction base="xs:decimal">
+				<xs:minInclusive value="0.01" />
+				<xs:fractionDigits value="2" />
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+
+	<xs:simpleType name="portValues">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="USB" />
+			<xs:enumeration value="LPT" />
+			<xs:enumeration value="COM" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:element name="port">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="portValues">
+					<xs:attribute ref="id" use="required" />
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="devicesGroup">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:enumeration value="Multimedia" />
+				<xs:enumeration value="Input/Output" />
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+
+	<xs:element name="type">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="st:isPeripherals" />
+				<xs:element ref="st:energyConsumption" minOccurs="0" />
+				<xs:element ref="st:hasCooler" />
+				<xs:element ref="devicesGroup" />
+				<xs:element ref="port" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="device">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="st:name" />
+				<xs:element ref="origin" />
+				<xs:element ref="price" />
+				<xs:element ref="type" />
+				<xs:element ref="st:isCritical" />
+			</xs:sequence>
+			<xs:attribute ref="id" use="required" />
+		</xs:complexType>
+	</xs:element>
+
+
+	<xs:element name="devices">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="device" minOccurs="1" maxOccurs="unbounded" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+</xs:schema>

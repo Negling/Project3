@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="devices.xsl"?>
+<dev:devices xmlns:dev="http://www.epam.com/devices"
+	xmlns:st="http://www.epam.com/simpleTypes" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.epam.com/devices devices.xsd">
+	<dev:device dev:id="456">
+		<st:name>HP LaserJet Pro P1102</st:name>
+		<dev:origin dev:country="JP">Japan</dev:origin>
+		<dev:price>1999.99</dev:price>
+		<dev:type>
+			<st:isPeripherals>false</st:isPeripherals>
+			<st:energyConsumption>150</st:energyConsumption>
+			<st:hasCooler>true</st:hasCooler>
+			<dev:devicesGroup>Multimedia</dev:devicesGroup>
+			<dev:port dev:id="14">LPT</dev:port>
+		</dev:type>
+		<st:isCritical>false</st:isCritical>
+	</dev:device>
+	<dev:device dev:id="911">
+		<st:name>NVIDIA GeForce 920M</st:name>
+		<dev:origin dev:country="USA">United States</dev:origin>
+		<dev:price>7999.99</dev:price>
+		<dev:type>
+			<st:isPeripherals>false</st:isPeripherals>
+			<st:energyConsumption>30</st:energyConsumption>
+			<st:hasCooler>true</st:hasCooler>
+			<dev:devicesGroup>Multimedia</dev:devicesGroup>
+			<dev:port dev:id="13">COM</dev:port>
+		</dev:type>
+		<st:isCritical>true</st:isCritical>
+	</dev:device>
+	<dev:device dev:id="145">
+		<st:name>Microsoft Reclusa Gaming</st:name>
+		<dev:origin dev:country="USA">United States</dev:origin>
+		<dev:price>899.00</dev:price>
+		<dev:type>
+			<st:isPeripherals>true</st:isPeripherals>
+			<st:hasCooler>false</st:hasCooler>
+			<dev:devicesGroup>Input/Output</dev:devicesGroup>
+			<dev:port dev:id="12">USB</dev:port>
+		</dev:type>
+		<st:isCritical>false</st:isCritical>
+	</dev:device>
+	<dev:device dev:id="613">
+		<st:name>Samsung S22F350F</st:name>
+		<dev:origin dev:country="KR">South Korea</dev:origin>
+		<dev:price>14547.00</dev:price>
+		<dev:type>
+			<st:isPeripherals>true</st:isPeripherals>
+			<st:hasCooler>true</st:hasCooler>
+			<dev:devicesGroup>Multimedia</dev:devicesGroup>
+			<dev:port dev:id="13">COM</dev:port>
+		</dev:type>
+		<st:isCritical>true</st:isCritical>
+	</dev:device>
+</dev:devices>

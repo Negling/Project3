@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.epam.com/simpleTypes" xmlns:tns="http://www.epam.com/simpleTypes"
+	elementFormDefault="qualified">
+
+	<!-- definition of simple types -->
+	<xs:element name="name" type="xs:string" />
+	<xs:element name="isCritical" type="xs:boolean" />
+	<xs:element name="isPeripherals" type="xs:boolean" />
+	<xs:element name="hasCooler" type="xs:boolean" />
+	<xs:element name="energyConsumption" type="xs:positiveInteger" />
+
+</xs:schema>
